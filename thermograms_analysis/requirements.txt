@@ -1,1 +1,8 @@
 numpy
+opencv-python
+sklearn
+catboost
+pandas
+matplotlib
+tqdm
+scipy
