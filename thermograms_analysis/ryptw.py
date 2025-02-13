@@ -73,6 +73,19 @@ class PTWFrameInfo:
 
   def __init__(self):
 
+    """
+        Initialize the class with default values for all attributes.
+
+        This method initializes an instance of the class. It sets all the attributes to their default values.
+        These attributes correspond to various parameters and settings related to file information, header details, camera settings, frame details, temperature information and so on.
+
+        Args:
+            self: A reference to the instance of the class.
+
+        Returns:
+            None
+        """
+
     self.FileName = ''
     self.h_Signature = '' #[0:5]
     self.h_format = 'unknown'
