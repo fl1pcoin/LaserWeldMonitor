@@ -106,20 +106,28 @@ def remove_reflection(boxes, center, dx, dy, r):
 
 class NearestTracker:
     """
-This class is used to track points between frames in a video or a sequence of images. It maintains a dictionary of tracked points and performs operations such as matching previously tracked points with new detections, deleting unmatched tracks, and assigning new IDs to unmatched detections.
+    This class is used to track points between frames in a video or a sequence of images. 
+    It maintains a dictionary of tracked points and performs operations such as matching previously tracked
+    points with new detections, deleting unmatched tracks, and assigning new IDs to unmatched detections.
 
-Methods:
-    __init__(self):
-        Initializes the class and sets up the necessary attributes. It initializes a dictionary to keep track of objects, sets the maximum id to 0, and the maximum distance to 30.
+    Methods:
+        __init__(self):
+            Initializes the class and sets up the necessary attributes.
+            It initializes a dictionary to keep track of objects, sets the maximum id to 0, and the maximum distance to 30.
 
-    step(self, pts: numpy.ndarray) -> dict:
-        Performs a step in tracking points between frames. It first checks if there are points being tracked already. If not, it assigns IDs to the newly detected points. Next, it matches the previously tracked points with the new detections. If some points are not matched, they are considered for deletion or assignment of new IDs. Finally, it updates the tracked points, removes unmatched tracks, and assigns new IDs to unmatched detections.
+        step(self, pts: numpy.ndarray) -> dict:
+            Performs a step in tracking points between frames. It first checks if there are points being tracked already.
+            If not, it assigns IDs to the newly detected points. Next, it matches the previously tracked points with the new detections.
+            If some points are not matched, they are considered for deletion or assignment of new IDs.
+            Finally, it updates the tracked points, removes unmatched tracks, and assigns new IDs to unmatched detections.
 
-        Args:
-            pts: An array of new points detected in the current frame.
+            Args:
+                pts: An array of new points detected in the current frame.
         
-        Returns:
-            A deepcopy of the dictionary containing the tracked points after the matching, deletion and addition process. Each key in the dictionary is the ID of the point and the value is its corresponding point."""
+            Returns:
+                A deepcopy of the dictionary containing the tracked points after the matching, deletion and addition process.
+                Each key in the dictionary is the ID of the point and the value is its corresponding point.
+    """
     def __init__(self):
         """
     Initializer for the class.
